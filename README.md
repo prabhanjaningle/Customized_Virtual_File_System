@@ -1,4 +1,4 @@
-CVFS (Custom Virtual File System)
+#CVFS (Custom Virtual File System)
 
 CVFS is a user-space virtual file system implemented in C, designed to simulate the internal working of a UNIX/Linux file system.
 The project provides a custom shell interface that allows users to perform basic file operations such as creating, reading, writing, deleting files, and viewing file metadata.
