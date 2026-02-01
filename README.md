@@ -1,15 +1,15 @@
-#CVFS (Custom Virtual File System)
+CVFS – Custom Virtual File System
 
-CVFS is a user-space virtual file system implemented in C, designed to simulate the internal working of a UNIX/Linux file system.
-The project provides a custom shell interface that allows users to perform basic file operations such as creating, reading, writing, deleting files, and viewing file metadata.
+CVFS (Custom Virtual File System) is a user-space, in-memory file system implemented in C, designed to demonstrate the internal working of a UNIX/Linux-like file system.
+The project provides a custom command-line shell through which users can perform fundamental file operations and observe how a file system manages files internally.
 
-All file operations are performed in memory, without interacting with the host operating system’s actual file system.
+This project does not interact with the host operating system’s real file system and is intended purely for learning and academic purposes.
 
-Features
+Key Features
 
-Custom command-line shell (CVFS >)
+Custom interactive shell (CVFS >)
 
-File creation with permissions (Read / Write / Read + Write)
+File creation with permission control (Read / Write / Read + Write)
 
 Read and write operations using file descriptors
 
@@ -19,21 +19,23 @@ File metadata display (stat)
 
 Directory listing (ls)
 
-Manual pages for supported commands (man)
+Command help and manual pages (help, man)
 
-Error handling using predefined error codes
+Structured error handling using predefined error codes
 
-File System Components
+File System Architecture
 
-Boot Block – Stores boot-related information
+CVFS simulates the following core file system components:
+
+Boot Block – Stores basic boot and system information
 
 Super Block – Maintains total and free inode count
 
-Inode List (DILB) – Linked list of inodes
+Inode List (DILB) – Linked list representing all inodes
 
-File Table – Tracks file offsets and access modes
+File Table – Maintains file offsets and access modes
 
-UFDT (User File Descriptor Table) – Manages open files
+UFDT (User File Descriptor Table) – Tracks opened files per process
 
 Supported Commands
 creat <filename> <permission>
@@ -65,31 +67,41 @@ CVFS > unlink demo.txt
 
 Technologies Used
 
-Language: C
+Programming Language: C
 
 Platform: Linux
 
-Concepts: Operating Systems, File Systems, Memory Management
+Core Concepts:
 
-Notes
+Operating Systems
 
-This is a virtual (in-memory) file system
+File System Design
 
-No real files are created on the disk
+Inodes and File Descriptors
 
-Intended for learning and academic purposes
+Memory Management
 
-Learning Outcome
+Important Notes
 
-This project helps in understanding:
+CVFS is a virtual (in-memory) file system
 
-Inode-based file system architecture
+No real files or directories are created on disk
+
+Designed for conceptual clarity, not production use
+
+Learning Outcomes
+
+This project helped in understanding:
+
+Internal design of inode-based file systems
 
 File descriptor and permission handling
 
-Memory management in system programming
+Memory allocation and cleanup in C
 
-Error handling in C
+Error handling in system-level programs
+
+Designing low-level systems with structured components
 
 Author
 
